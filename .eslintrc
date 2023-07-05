@@ -4,6 +4,7 @@
     "oclif-typescript"
   ],
   "rules": {
-    "no-useless-catch": "off"
+    "no-useless-catch": "off",
+    "camelcase": "off"
   }
 }

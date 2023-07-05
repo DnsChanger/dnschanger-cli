@@ -1,7 +1,7 @@
 {
   "name": "dnschanger-cli",
   "version": "0.0.0",
-  "description": "oclif example Hello World CLI",
+  "description": "This is an open-source DNS Changer for Windows, Mac, and Linux operating systems. Its goal is to gather the best DNS servers in a secure application.",
   "author": "sajjad isvand @sajjadmrx",
   "bin": {
     "d10i": "./bin/run"

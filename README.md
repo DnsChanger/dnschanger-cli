@@ -52,7 +52,7 @@ USAGE
 * [`d10i plugins:uninstall PLUGIN...`](#d10i-pluginsuninstall-plugin-1)
 * [`d10i plugins:uninstall PLUGIN...`](#d10i-pluginsuninstall-plugin-2)
 * [`d10i plugins update`](#d10i-plugins-update)
-* [`d10i servers add [FILE]`](#d10i-servers-add-file)
+* [`d10i status`](#d10i-status)
 
 ## `d10i help [COMMANDS]`
 
@@ -307,27 +307,19 @@ DESCRIPTION
   Update installed plugins.
 ```
 
-## `d10i servers add [FILE]`
+## `d10i status`
 
-describe the command here
+Check the connection status of DNS.
 
 ```
 USAGE
-  $ d10i servers add [FILE] [-n <value>] [-f]
-
-ARGUMENTS
-  FILE  file to read
-
-FLAGS
-  -f, --force
-  -n, --name=<value>  name to print
+  $ d10i status
 
 DESCRIPTION
-  describe the command here
-
-EXAMPLES
-  $ d10i servers add
+  Check the connection status of DNS.
 ```
+
+_See code: [dist/commands/status.ts](https://github.com/DnsChanger/dnschanger-cli/blob/v0.0.0/dist/commands/status.ts)_
 <!-- commandsstop -->
 * [`oex hello PERSON`](#oex-hello-person)
 * [`oex hello world`](#oex-hello-world)

@@ -73,7 +73,7 @@ export class WindowsPlatform extends Platform {
     try {
       const interfaces: Interface[] = await this.getInterfacesList()
       const activeInterface: Interface | undefined = interfaces.find(
-        (inter: Interface) => inter.gatewayIp !== null,
+        (inter: Interface) => inter.gateway_ip !== null,
       )
 
       if (!activeInterface) throw new Error('CONNECTION_FAILED')

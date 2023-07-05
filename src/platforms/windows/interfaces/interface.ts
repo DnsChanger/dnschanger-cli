@@ -1,10 +1,10 @@
 export interface Interface {
   name: string;
-  macAddress: string | undefined;
-  ipAddress: string | undefined;
+  mac_address: string | undefined;
+  ip_address: string | undefined;
   vendor: string;
   model: string;
   type: string;
   netmask: string | null;
-  gatewayIp: string | null;
+  gateway_ip: string | null;
 }

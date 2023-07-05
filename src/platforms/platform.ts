@@ -13,7 +13,7 @@ export abstract class Platform {
 
   protected execCmd(cmd: string): Promise<string | Buffer | undefined> {
     return new Promise((resolve, reject) => {
-      sudo.exec(cmd, {name: 'dnsChanger-cli'}, (error, stdout) => {
+      sudo.exec(cmd, {name: 'dnsChanger'}, (error, stdout) => {
         if (error) {
           reject(error)
           return

@@ -20,7 +20,9 @@
     "@oclif/core": "^2",
     "@oclif/plugin-help": "^5",
     "@oclif/plugin-plugins": "^2.4.7",
-    "enquirer": "^2.3.6"
+    "enquirer": "^2.3.6",
+    "network": "^0.6.1",
+    "sudo-prompt": "^9.2.1"
   },
   "devDependencies": {
     "@oclif/test": "^2.3.25",

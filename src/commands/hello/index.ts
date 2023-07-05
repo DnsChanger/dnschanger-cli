@@ -1,4 +1,4 @@
-import { Args, Command, Flags, ux } from '@oclif/core'
+import {Command} from '@oclif/core'
 export default class Hello extends Command {
   static description = 'Say hello'
 
@@ -16,8 +16,5 @@ export default class Hello extends Command {
   //   person: Args.string({ description: 'Person to say hello to', required: true }),
   // }
 
-
-  async run(): Promise<void> {
-
-  }
+  async run(): Promise<void> {}
 }

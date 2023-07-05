@@ -5,6 +5,7 @@
   ],
   "rules": {
     "no-useless-catch": "off",
-    "camelcase": "off"
+    "camelcase": "off",
+    "no-negated-condition": "off"
   }
 }

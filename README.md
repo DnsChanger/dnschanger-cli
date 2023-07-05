@@ -42,6 +42,7 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`d10i hello`](#d10i-hello)
 * [`d10i help [COMMANDS]`](#d10i-help-commands)
 * [`d10i plugins`](#d10i-plugins)
 * [`d10i plugins:install PLUGIN...`](#d10i-pluginsinstall-plugin)
@@ -53,6 +54,20 @@ USAGE
 * [`d10i plugins:uninstall PLUGIN...`](#d10i-pluginsuninstall-plugin-2)
 * [`d10i plugins update`](#d10i-plugins-update)
 * [`d10i status`](#d10i-status)
+
+## `d10i hello`
+
+Say hello
+
+```
+USAGE
+  $ d10i hello
+
+DESCRIPTION
+  Say hello
+```
+
+_See code: [dist/commands/hello/index.ts](https://github.com/DnsChanger/dnschanger-cli/blob/v0.0.0/dist/commands/hello/index.ts)_
 
 ## `d10i help [COMMANDS]`
 

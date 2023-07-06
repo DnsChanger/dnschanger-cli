@@ -1,11 +1,11 @@
-oclif-hello-world
+DNS Changer CLI
 =================
 
-oclif example Hello World CLI
+The command line interface for [DNS Changer](https://dnschanger.github.io/)
 
-[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![CircleCI](https://circleci.com/gh/oclif/hello-world/tree/main.svg?style=shield)](https://circleci.com/gh/oclif/hello-world/tree/main)
-[![GitHub license](https://img.shields.io/github/license/oclif/hello-world)](https://github.com/oclif/hello-world/blob/main/LICENSE)
+[![Version](https://img.shields.io/npm/v/dnschanger-cli.svg)](https://npmjs.org/package/dnschanger-cli)
+[![Downloads/week](https://img.shields.io/npm/dw/dnschanger-cli.svg)](https://npmjs.org/package/dnschanger-cli)
+[![GitHub license](https://img.shields.io/github/license/DnsChanger/dnschanger-cli)](https://github.com/DnsChanger/dnschanger-cli/blob/main/LICENSE)
 
 <!-- toc -->
 * [Usage](#usage)
@@ -46,7 +46,6 @@ USAGE
 * [`d11i d8t`](#d11i-d8t)
 * [`d11i dis`](#d11i-dis)
 * [`d11i disconnect`](#d11i-disconnect)
-* [`d11i hello`](#d11i-hello)
 * [`d11i help [COMMANDS]`](#d11i-help-commands)
 * [`d11i plugins`](#d11i-plugins)
 * [`d11i plugins:install PLUGIN...`](#d11i-pluginsinstall-plugin)
@@ -145,20 +144,6 @@ EXAMPLES
 ```
 
 _See code: [dist/commands/disconnect.ts](https://github.com/DnsChanger/dnschanger-cli/blob/v0.0.0/dist/commands/disconnect.ts)_
-
-## `d11i hello`
-
-Say hello
-
-```
-USAGE
-  $ d11i hello
-
-DESCRIPTION
-  Say hello
-```
-
-_See code: [dist/commands/hello/index.ts](https://github.com/DnsChanger/dnschanger-cli/blob/v0.0.0/dist/commands/hello/index.ts)_
 
 ## `d11i help [COMMANDS]`
 

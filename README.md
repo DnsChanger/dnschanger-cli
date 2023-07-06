@@ -43,6 +43,9 @@ USAGE
 # Commands
 <!-- commands -->
 * [`d11i connect`](#d11i-connect)
+* [`d11i d8t`](#d11i-d8t)
+* [`d11i dis`](#d11i-dis)
+* [`d11i disconnect`](#d11i-disconnect)
 * [`d11i hello`](#d11i-hello)
 * [`d11i help [COMMANDS]`](#d11i-help-commands)
 * [`d11i plugins`](#d11i-plugins)
@@ -75,7 +78,7 @@ DESCRIPTION
 EXAMPLES
   $ d11i connect
 
-  $ d11i connect -s 1.1.1.1,1.0.0.1
+  $ d11i connect -s 178.22.122.100,185.51.200.2
 
   $ d11i connect -n shecan
 
@@ -83,6 +86,65 @@ EXAMPLES
 ```
 
 _See code: [dist/commands/connect.ts](https://github.com/DnsChanger/dnschanger-cli/blob/v0.0.0/dist/commands/connect.ts)_
+
+## `d11i d8t`
+
+Disconnect from DNS Server
+
+```
+USAGE
+  $ d11i d8t
+
+DESCRIPTION
+  Disconnect from DNS Server
+
+ALIASES
+  $ d11i dis
+  $ d11i d8t
+
+EXAMPLES
+  $ d11i disconnect
+```
+
+## `d11i dis`
+
+Disconnect from DNS Server
+
+```
+USAGE
+  $ d11i dis
+
+DESCRIPTION
+  Disconnect from DNS Server
+
+ALIASES
+  $ d11i dis
+  $ d11i d8t
+
+EXAMPLES
+  $ d11i disconnect
+```
+
+## `d11i disconnect`
+
+Disconnect from DNS Server
+
+```
+USAGE
+  $ d11i disconnect
+
+DESCRIPTION
+  Disconnect from DNS Server
+
+ALIASES
+  $ d11i dis
+  $ d11i d8t
+
+EXAMPLES
+  $ d11i disconnect
+```
+
+_See code: [dist/commands/disconnect.ts](https://github.com/DnsChanger/dnschanger-cli/blob/v0.0.0/dist/commands/disconnect.ts)_
 
 ## `d11i hello`
 

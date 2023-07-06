@@ -25,54 +25,56 @@ export class ConnectCmd extends Command {
   ]
 
   async run(): Promise<any> {
-    const {flags} = await this.parse(ConnectCmd)
-    const serversStore = await getServersList()
-    let server: Server | undefined
-    if (!flags.server && !flags.name && !flags.random) {
-      const prompt = new AutoComplete({
-        name: 'server',
-        limit: serversStore.length,
-        message: 'Pick your favorite server',
-        choices: serversStore.map((server: Server) => server.name),
-      })
+    try {
+      const {flags} = await this.parse(ConnectCmd)
+      const serversStore = await getServersList()
+      let server: Server | undefined
+      if (!flags.server && !flags.name && !flags.random) {
+        const prompt = new AutoComplete({
+          name: 'server',
+          limit: serversStore.length,
+          message: 'Pick your favorite server',
+          choices: serversStore.map((server: Server) => server.name),
+        })
 
-      const answer = await prompt.run()
-      server = serversStore.find(s => s.name === answer)
-    } else if (flags.server) {
-      const nameServers = flags.server.split(',')
-      if (isValidDnsAddress(nameServers[0])) {
-        if (nameServers[1] && !isValidDnsAddress(nameServers[1])) {
-          this.log('❌', chalk.redBright`Error: Invalid DNS address detected.`)
-          return
-        }
+        const answer = await prompt.run()
+        server = serversStore.find(s => s.name === answer)
+      } else if (flags.server) {
+        const nameServers = flags.server.split(',')
+        if (isValidDnsAddress(nameServers[0])) {
+          if (nameServers[1] && !isValidDnsAddress(nameServers[1])) {
+            this.log('❌', chalk.redBright`Error: Invalid DNS address detected.`)
+            return
+          }
 
-        const existsServer: Server | undefined = serversStore.find((ser: Server) => ser.servers.toString() === nameServers.toString())
-        if (!existsServer) {
-          server = {
-            servers: nameServers,
-            name: `custom-${nameServers[0]}`,
-            key: `custom-${nameServers[0]}`,
-            rate: 0,
-            tags: ['custom'],
+          const existsServer: Server | undefined = serversStore.find((ser: Server) => ser.servers.toString() === nameServers.toString())
+          if (!existsServer) {
+            server = {
+              servers: nameServers,
+              name: `custom-${nameServers[0]}`,
+              key: `custom-${nameServers[0]}`,
+              rate: 0,
+              tags: ['custom'],
+            }
           }
         }
+      } else if (flags.name) {
+        server = serversStore.find(s => s.name.toLowerCase() === flags.name?.toLowerCase())
+      } else if (flags.random) {
+        server = _.sample(serversStore)
       }
-    } else if (flags.name) {
-      server = serversStore.find(s => s.name.toLowerCase() === flags.name?.toLowerCase())
-    } else if (flags.random) {
-      server = _.sample(serversStore)
+
+      if (!server) {
+        this.log('❌', chalk.redBright`Error: Server not found`)
+        return
+      }
+
+      ux.action.start(`Connecting to ${server.name}`)
+      await dnsService.setDns(server?.servers)
+      ux.action.stop()
+      this.log('✅', chalk.greenBright`Connected To ${server.name}`)
+    } catch (error:any) {
+      this.error(chalk.redBright`Error connecting to DNS server: ${error.message}`)
     }
-
-    if (!server) {
-      this.log('❌', chalk.redBright`Error: Server not found`)
-      return
-    }
-
-    ux.action.start(`Connecting to ${server.name}`)
-    await dnsService.setDns(server?.servers)
-    ux.action.stop()
-    this.log('✅', chalk.greenBright`Connected To ${server.name}`)
-
-    return Promise.resolve()
   }
 }

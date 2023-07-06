@@ -1,6 +1,6 @@
 {
-  "name": "dnschanger-cli2",
-  "version": "1.0.0",
+  "name": "dnschanger-cli",
+  "version": "0.0.0",
   "description": "This is an open-source DNS Changer for Windows, Mac, and Linux operating systems. Its goal is to gather the best DNS servers in a secure application.",
   "author": "sajjad isvand @sajjadmrx",
   "bin": {

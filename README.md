@@ -27,18 +27,7 @@ USAGE
   $ d11i COMMAND
 ...
 ```
-<!-- usagestop -->
-```sh-session
-$ npm install -g oclif-hello-world
-$ oex COMMAND
-running command...
-$ oex (--version)
-oclif-hello-world/0.0.0 darwin-x64 node-v16.13.1
-$ oex --help [COMMAND]
-USAGE
-  $ oex COMMAND
-...
-```
+
 <!-- usagestop -->
 # Commands
 <!-- commands -->
@@ -46,17 +35,8 @@ USAGE
 * [`d11i d8t`](#d11i-d8t)
 * [`d11i dis`](#d11i-dis)
 * [`d11i disconnect`](#d11i-disconnect)
-* [`d11i help [COMMANDS]`](#d11i-help-commands)
-* [`d11i plugins`](#d11i-plugins)
-* [`d11i plugins:install PLUGIN...`](#d11i-pluginsinstall-plugin)
-* [`d11i plugins:inspect PLUGIN...`](#d11i-pluginsinspect-plugin)
-* [`d11i plugins:install PLUGIN...`](#d11i-pluginsinstall-plugin-1)
-* [`d11i plugins:link PLUGIN`](#d11i-pluginslink-plugin)
-* [`d11i plugins:uninstall PLUGIN...`](#d11i-pluginsuninstall-plugin)
-* [`d11i plugins:uninstall PLUGIN...`](#d11i-pluginsuninstall-plugin-1)
-* [`d11i plugins:uninstall PLUGIN...`](#d11i-pluginsuninstall-plugin-2)
-* [`d11i plugins update`](#d11i-plugins-update)
 * [`d11i status`](#d11i-status)
+* [`d11i help [COMMANDS]`](#d11i-help-commands)
 
 ## `d11i connect`
 

@@ -2,7 +2,7 @@
   "compilerOptions": {
     "declaration": true,
     "importHelpers": true,
-    "module": "node16",
+    "module": "Node16",
     "moduleResolution": "node16",
     "outDir": "dist",
     "rootDir": "src",
@@ -13,7 +13,7 @@
     "esModuleInterop": true,
     "useUnknownInCatchVariables": false
   },
-  "include": ["src/**/*"], 
+  "include": ["src/**/*"],
   "ts-node": {
     "transpileOnly": true,
     "files": true,

@@ -4,7 +4,7 @@
   "description": "This is an open-source DNS Changer for Windows, Mac, and Linux operating systems. Its goal is to gather the best DNS servers in a secure application.",
   "author": "sajjad isvand @sajjadmrx",
   "bin": {
-    "d10i": "./bin/run"
+    "d11i": "./bin/run"
   },
   "homepage": "https://github.com/DnsChanger/dnschanger-cli",
   "license": "MIT",
@@ -24,6 +24,7 @@
     "chalk": "^4.1.2",
     "enquirer": "^2.3.6",
     "fs-extra": "^11.1.1",
+    "lodash": "^4.17.21",
     "network": "^0.6.1",
     "sudo-prompt": "^9.2.1"
   },
@@ -45,8 +46,8 @@
     "typescript": "^4.9.5"
   },
   "oclif": {
-    "bin": "d10i",
-    "dirname": "d10i",
+    "bin": "d11i",
+    "dirname": "d11i",
     "commands": "./dist/commands",
     "plugins": [
       "@oclif/plugin-help",
@@ -60,13 +61,14 @@
     }
   },
   "scripts": {
-    "build": "shx rm -rf dist && tsc -b",
+    "build": "shx rm -rf dist &&  tsc --b --force",
     "lint": "eslint . --ext .ts --config .eslintrc",
     "postpack": "shx rm -f oclif.manifest.json",
     "posttest": "npm run lint",
-    "prepack": "npm run build && oclif manifest && oclif readme",
+    "prepack": "oclif manifest && oclif readme",
     "test": "mocha --forbid-only \"test/**/*.test.ts\"",
-    "version": "oclif readme && git add README.md"
+    "version": "oclif readme && git add README.md",
+    "pub": "npm run build && npm run prepack && npm publish"
   },
   "engines": {
     "node": ">=12.0.0"

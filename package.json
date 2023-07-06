@@ -24,6 +24,7 @@
     "chalk": "^4.1.2",
     "enquirer": "^2.3.6",
     "fs-extra": "^11.1.1",
+    "lodash": "^4.17.21",
     "network": "^0.6.1",
     "sudo-prompt": "^9.2.1"
   },
@@ -45,8 +46,8 @@
     "typescript": "^4.9.5"
   },
   "oclif": {
-    "bin": "d10i",
-    "dirname": "d10i",
+    "bin": "d11i",
+    "dirname": "d11i",
     "commands": "./dist/commands",
     "plugins": [
       "@oclif/plugin-help",

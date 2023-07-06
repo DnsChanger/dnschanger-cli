@@ -18,13 +18,13 @@ oclif example Hello World CLI
 <!-- usage -->
 ```sh-session
 $ npm install -g dnschanger-cli
-$ d10i COMMAND
+$ d11i COMMAND
 running command...
-$ d10i (--version)
+$ d11i (--version)
 dnschanger-cli/0.0.0 win32-x64 node-v18.15.0
-$ d10i --help [COMMAND]
+$ d11i --help [COMMAND]
 USAGE
-  $ d10i COMMAND
+  $ d11i COMMAND
 ...
 ```
 <!-- usagestop -->
@@ -42,26 +42,55 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`d10i hello`](#d10i-hello)
-* [`d10i help [COMMANDS]`](#d10i-help-commands)
-* [`d10i plugins`](#d10i-plugins)
-* [`d10i plugins:install PLUGIN...`](#d10i-pluginsinstall-plugin)
-* [`d10i plugins:inspect PLUGIN...`](#d10i-pluginsinspect-plugin)
-* [`d10i plugins:install PLUGIN...`](#d10i-pluginsinstall-plugin-1)
-* [`d10i plugins:link PLUGIN`](#d10i-pluginslink-plugin)
-* [`d10i plugins:uninstall PLUGIN...`](#d10i-pluginsuninstall-plugin)
-* [`d10i plugins:uninstall PLUGIN...`](#d10i-pluginsuninstall-plugin-1)
-* [`d10i plugins:uninstall PLUGIN...`](#d10i-pluginsuninstall-plugin-2)
-* [`d10i plugins update`](#d10i-plugins-update)
-* [`d10i status`](#d10i-status)
+* [`d11i connect`](#d11i-connect)
+* [`d11i hello`](#d11i-hello)
+* [`d11i help [COMMANDS]`](#d11i-help-commands)
+* [`d11i plugins`](#d11i-plugins)
+* [`d11i plugins:install PLUGIN...`](#d11i-pluginsinstall-plugin)
+* [`d11i plugins:inspect PLUGIN...`](#d11i-pluginsinspect-plugin)
+* [`d11i plugins:install PLUGIN...`](#d11i-pluginsinstall-plugin-1)
+* [`d11i plugins:link PLUGIN`](#d11i-pluginslink-plugin)
+* [`d11i plugins:uninstall PLUGIN...`](#d11i-pluginsuninstall-plugin)
+* [`d11i plugins:uninstall PLUGIN...`](#d11i-pluginsuninstall-plugin-1)
+* [`d11i plugins:uninstall PLUGIN...`](#d11i-pluginsuninstall-plugin-2)
+* [`d11i plugins update`](#d11i-plugins-update)
+* [`d11i status`](#d11i-status)
 
-## `d10i hello`
+## `d11i connect`
+
+Connect to DNS Server
+
+```
+USAGE
+  $ d11i connect [-s <value>] [-n <value>] [-r]
+
+FLAGS
+  -n, --name=<value>    Connect to a server by name.
+  -r, --random          Connect to a server randomly.
+  -s, --server=<value>  Connect to a server by addresses.
+
+DESCRIPTION
+  Connect to DNS Server
+
+EXAMPLES
+  $ d11i connect
+
+  $ d11i connect -s 1.1.1.1,1.0.0.1
+
+  $ d11i connect -n shecan
+
+  $ d11i connect -r
+```
+
+_See code: [dist/commands/connect.ts](https://github.com/DnsChanger/dnschanger-cli/blob/v0.0.0/dist/commands/connect.ts)_
+
+## `d11i hello`
 
 Say hello
 
 ```
 USAGE
-  $ d10i hello
+  $ d11i hello
 
 DESCRIPTION
   Say hello
@@ -69,13 +98,13 @@ DESCRIPTION
 
 _See code: [dist/commands/hello/index.ts](https://github.com/DnsChanger/dnschanger-cli/blob/v0.0.0/dist/commands/hello/index.ts)_
 
-## `d10i help [COMMANDS]`
+## `d11i help [COMMANDS]`
 
-Display help for d10i.
+Display help for d11i.
 
 ```
 USAGE
-  $ d10i help [COMMANDS] [-n]
+  $ d11i help [COMMANDS] [-n]
 
 ARGUMENTS
   COMMANDS  Command to show help for.
@@ -84,18 +113,18 @@ FLAGS
   -n, --nested-commands  Include all nested commands in the output.
 
 DESCRIPTION
-  Display help for d10i.
+  Display help for d11i.
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.2.10/src/commands/help.ts)_
 
-## `d10i plugins`
+## `d11i plugins`
 
 List installed plugins.
 
 ```
 USAGE
-  $ d10i plugins [--core]
+  $ d11i plugins [--core]
 
 FLAGS
   --core  Show core plugins.
@@ -104,18 +133,18 @@ DESCRIPTION
   List installed plugins.
 
 EXAMPLES
-  $ d10i plugins
+  $ d11i plugins
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.4.7/src/commands/plugins/index.ts)_
 
-## `d10i plugins:install PLUGIN...`
+## `d11i plugins:install PLUGIN...`
 
 Installs a plugin into the CLI.
 
 ```
 USAGE
-  $ d10i plugins:install PLUGIN...
+  $ d11i plugins:install PLUGIN...
 
 ARGUMENTS
   PLUGIN  Plugin to install.
@@ -137,23 +166,23 @@ DESCRIPTION
 
 
 ALIASES
-  $ d10i plugins add
+  $ d11i plugins add
 
 EXAMPLES
-  $ d10i plugins:install myplugin 
+  $ d11i plugins:install myplugin 
 
-  $ d10i plugins:install https://github.com/someuser/someplugin
+  $ d11i plugins:install https://github.com/someuser/someplugin
 
-  $ d10i plugins:install someuser/someplugin
+  $ d11i plugins:install someuser/someplugin
 ```
 
-## `d10i plugins:inspect PLUGIN...`
+## `d11i plugins:inspect PLUGIN...`
 
 Displays installation properties of a plugin.
 
 ```
 USAGE
-  $ d10i plugins:inspect PLUGIN...
+  $ d11i plugins:inspect PLUGIN...
 
 ARGUMENTS
   PLUGIN  [default: .] Plugin to inspect.
@@ -169,16 +198,16 @@ DESCRIPTION
   Displays installation properties of a plugin.
 
 EXAMPLES
-  $ d10i plugins:inspect myplugin
+  $ d11i plugins:inspect myplugin
 ```
 
-## `d10i plugins:install PLUGIN...`
+## `d11i plugins:install PLUGIN...`
 
 Installs a plugin into the CLI.
 
 ```
 USAGE
-  $ d10i plugins:install PLUGIN...
+  $ d11i plugins:install PLUGIN...
 
 ARGUMENTS
   PLUGIN  Plugin to install.
@@ -200,23 +229,23 @@ DESCRIPTION
 
 
 ALIASES
-  $ d10i plugins add
+  $ d11i plugins add
 
 EXAMPLES
-  $ d10i plugins:install myplugin 
+  $ d11i plugins:install myplugin 
 
-  $ d10i plugins:install https://github.com/someuser/someplugin
+  $ d11i plugins:install https://github.com/someuser/someplugin
 
-  $ d10i plugins:install someuser/someplugin
+  $ d11i plugins:install someuser/someplugin
 ```
 
-## `d10i plugins:link PLUGIN`
+## `d11i plugins:link PLUGIN`
 
 Links a plugin into the CLI for development.
 
 ```
 USAGE
-  $ d10i plugins:link PLUGIN
+  $ d11i plugins:link PLUGIN
 
 ARGUMENTS
   PATH  [default: .] path to plugin
@@ -234,16 +263,16 @@ DESCRIPTION
 
 
 EXAMPLES
-  $ d10i plugins:link myplugin
+  $ d11i plugins:link myplugin
 ```
 
-## `d10i plugins:uninstall PLUGIN...`
+## `d11i plugins:uninstall PLUGIN...`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ d10i plugins:uninstall PLUGIN...
+  $ d11i plugins:uninstall PLUGIN...
 
 ARGUMENTS
   PLUGIN  plugin to uninstall
@@ -256,17 +285,17 @@ DESCRIPTION
   Removes a plugin from the CLI.
 
 ALIASES
-  $ d10i plugins unlink
-  $ d10i plugins remove
+  $ d11i plugins unlink
+  $ d11i plugins remove
 ```
 
-## `d10i plugins:uninstall PLUGIN...`
+## `d11i plugins:uninstall PLUGIN...`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ d10i plugins:uninstall PLUGIN...
+  $ d11i plugins:uninstall PLUGIN...
 
 ARGUMENTS
   PLUGIN  plugin to uninstall
@@ -279,17 +308,17 @@ DESCRIPTION
   Removes a plugin from the CLI.
 
 ALIASES
-  $ d10i plugins unlink
-  $ d10i plugins remove
+  $ d11i plugins unlink
+  $ d11i plugins remove
 ```
 
-## `d10i plugins:uninstall PLUGIN...`
+## `d11i plugins:uninstall PLUGIN...`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ d10i plugins:uninstall PLUGIN...
+  $ d11i plugins:uninstall PLUGIN...
 
 ARGUMENTS
   PLUGIN  plugin to uninstall
@@ -302,17 +331,17 @@ DESCRIPTION
   Removes a plugin from the CLI.
 
 ALIASES
-  $ d10i plugins unlink
-  $ d10i plugins remove
+  $ d11i plugins unlink
+  $ d11i plugins remove
 ```
 
-## `d10i plugins update`
+## `d11i plugins update`
 
 Update installed plugins.
 
 ```
 USAGE
-  $ d10i plugins update [-h] [-v]
+  $ d11i plugins update [-h] [-v]
 
 FLAGS
   -h, --help     Show CLI help.
@@ -322,13 +351,13 @@ DESCRIPTION
   Update installed plugins.
 ```
 
-## `d10i status`
+## `d11i status`
 
 Check the connection status of DNS.
 
 ```
 USAGE
-  $ d10i status
+  $ d11i status
 
 DESCRIPTION
   Check the connection status of DNS.

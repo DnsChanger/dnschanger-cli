@@ -1,10 +1,10 @@
 {
-  "name": "dnschanger-cli",
-  "version": "0.0.0",
+  "name": "dnschanger-cli2",
+  "version": "1.0.0",
   "description": "This is an open-source DNS Changer for Windows, Mac, and Linux operating systems. Its goal is to gather the best DNS servers in a secure application.",
   "author": "sajjad isvand @sajjadmrx",
   "bin": {
-    "d10i": "./bin/run"
+    "d11i": "./bin/run"
   },
   "homepage": "https://github.com/DnsChanger/dnschanger-cli",
   "license": "MIT",
@@ -61,13 +61,14 @@
     }
   },
   "scripts": {
-    "build": "shx rm -rf dist && tsc -b",
+    "build": "shx rm -rf dist &&  tsc --b --force",
     "lint": "eslint . --ext .ts --config .eslintrc",
     "postpack": "shx rm -f oclif.manifest.json",
     "posttest": "npm run lint",
-    "prepack": "npm run build && oclif manifest && oclif readme",
+    "prepack": "oclif manifest && oclif readme",
     "test": "mocha --forbid-only \"test/**/*.test.ts\"",
-    "version": "oclif readme && git add README.md"
+    "version": "oclif readme && git add README.md",
+    "pub": "npm run build && npm run prepack && npm publish"
   },
   "engines": {
     "node": ">=12.0.0"

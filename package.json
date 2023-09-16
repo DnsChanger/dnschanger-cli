@@ -31,7 +31,7 @@
   "devDependencies": {
     "@oclif/test": "^2.3.25",
     "@types/chai": "^4",
-    "@types/fs-extra": "^11.0.1",
+    "@types/fs-extra": "^11.0.2",
     "@types/mocha": "^10.0.1",
     "@types/node": "^16.18.38",
     "chai": "^4",
